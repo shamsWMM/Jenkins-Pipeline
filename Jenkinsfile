@@ -20,12 +20,12 @@ pipeline{
                     body: "Build was successful"
 
                 }
-                failure{
-
-                }
-                always{
-
-                }
+               // failure{
+               //
+               // }
+               // always{
+//
+//                }
             }
         }
         stage('Test'){
