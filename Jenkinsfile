@@ -13,20 +13,21 @@ pipeline{
                 echo "Compile the code and generate necessary artefacts."
                 echo "Build stage complete!"
             }
-            post{
-                success{
-                    mailto: "shams.alsaegh@gmail.com"
-                    subject: "Build Status Email"
-                    body: "Build was successful"
-
-                }
-               // failure{
-               //
-               // }
-               // always{
-//
-//                }
             }
+    post{
+        success{
+            mailto: "shams.alsaegh@gmail.com"
+            subject: "Build Status Email"
+            body: "Build was successful"
+
+        }
+        failure{
+
+        }
+        always{
+
+        }
+            
         }
         stage('Test'){
             steps{
