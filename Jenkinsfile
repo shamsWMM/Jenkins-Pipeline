@@ -19,7 +19,7 @@ pipeline{
             post{
                 always{
                     emailext to: "shams.watha@gmail.com",
-                    subject: "Test Status Email",
+                    subject: "Test Status: ${currentBuild.currentResult}",
                     body: "Test log attached. Test status is ${currentBuild.currentResult}",
                     attachLog: true
                 }
@@ -41,7 +41,7 @@ pipeline{
             post{
                 always{
                     emailext to: "shams.watha@gmail.com",
-                    subject: "Security Scan Status Email",
+                    subject: "Security Scan Status: ${currentBuild.currentResult}",
                     body: "Security Scan log attached. Securtiy scan status is ${currentBuild.currentResult}",
                     attachLog: true
                 }
