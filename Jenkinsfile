@@ -20,7 +20,7 @@ pipeline{
                 always{
                     mail to: "shams.watha@gmail.com",
                     subject: "Test Status Email",
-                    body: "Test log attached! Test status is ${currentBuild.currentResult}",
+                    body: "Test log attached. Test status is ${currentBuild.currentResult}",
                     attachLog: true
                 }
             }
@@ -42,7 +42,7 @@ pipeline{
                 always{
                     mail to: "shams.watha@gmail.com",
                     subject: "Security Scan Status Email",
-                    body: "Security Scan log attached! Securtiy scan status is ${currentBuild.currentResult}",
+                    body: "Security Scan log attached. Securtiy scan status is ${currentBuild.currentResult}",
                     attachLog: true
                 }
             }
