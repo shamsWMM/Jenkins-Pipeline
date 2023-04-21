@@ -4,7 +4,7 @@ pipeline{
         stage("Build"){
             steps{
                 echo "Compiling and packaging the code"
-                echo "Tool for build automation: Gradle"
+                echo "Tool for build automation: Gradle "
             }
         }
         stage("Test"){
