@@ -51,10 +51,10 @@ pipeline{
             steps{
                 echo "Deploying to staging"
                 echo "Staging server: Azure Virtual Machines"
-                echo "Use terraform workspaces to switch between work spaces"
+                echo "Use terraform to switch between work spaces"
             }
         }
-        stage("Tests on Staging"){
+        stage("Test on Staging"){
             steps{
                 echo "Performing integration testing on staging"
                 echo "Ensuring application functions in staging"
@@ -65,7 +65,7 @@ pipeline{
             steps{
                 echo "Deploying to production"
                 echo "Production server: Azure Virtual Machines"
-                echo "Use terraform workspaces to switch between work spaces"
+                echo "Use terraform to switch between work spaces"
             }
         }
     }
