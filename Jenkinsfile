@@ -65,7 +65,7 @@ pipeline{
             steps{
                 echo "Deploying to production"
                 echo "Production server: Azure Virtual Machines"
-                echo "Use terraform to switch between work spaces"
+                echo "Use terraform to switch between work spaces!"
             }
         }
     }
