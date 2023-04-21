@@ -3,7 +3,8 @@ pipeline{
     stages{
         stage("Build"){
             steps{
-                echo "Building ..."
+                echo "Compiling and packing the code"
+                echo "Tool for build automation: Jenkins"
             }
             post{
                 always{
@@ -15,7 +16,8 @@ pipeline{
         }
         stage("Test"){
             steps{
-                echo "Testing ..."
+                echo "Performing unit testing"
+                echo "Performing integration testing"
             }
         }
         stage("Deploy"){
