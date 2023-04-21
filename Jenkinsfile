@@ -6,13 +6,6 @@ pipeline{
                 echo "Compiling and packaging the code"
                 echo "Tool for build automation: Gradle"
             }
-            post{
-                always{
-                    mail to: "shams.watha@gmail.com",
-                    subject: "Build Status Email",
-                    body: "Build log attached!"
-                }
-            }
         }
         stage("Test"){
             steps{
@@ -22,6 +15,14 @@ pipeline{
                 echo "Ensuring application components work together as expected"
                 echo "Tool for unit tests: JUnit"
                 echo "Tool for integration tests: Cypress"
+            }
+            post{
+                always{
+                    mail to: "shams.watha@gmail.com",
+                    subject: "Test Status Email",
+                    body: "Test log attached! Test status is ${currentBuild.currentResult}",
+                    attachLog: true
+                }
             }
         }
         stage("Code Analysis"){
@@ -37,12 +38,20 @@ pipeline{
                 echo "Looking for vulnerabilities"
                 echo "Tool for security scanning: OWASP Zed Attack Proxy (ZAP)"
             }
+            post{
+                always{
+                    mail to: "shams.watha@gmail.com",
+                    subject: "Security Scan Status Email",
+                    body: "Security Scan log attached! Securtiy scan status is ${currentBuild.currentResult}",
+                    attachLog: true
+                }
+            }
         }
         stage("Deploy to Staging"){
             steps{
                 echo "Deploying to staging"
                 echo "Staging server: Azure Virtual Machines"
-                echo "Use terraform workspaces to switch between spaces"
+                echo "Use terraform workspaces to switch between work spaces"
             }
         }
         stage("Tests on Staging"){
@@ -56,7 +65,7 @@ pipeline{
             steps{
                 echo "Deploying to production"
                 echo "Production server: Azure Virtual Machines"
-                echo "Use terraform workspaces to switch between spaces"
+                echo "Use terraform workspaces to switch between work spaces"
             }
         }
     }
