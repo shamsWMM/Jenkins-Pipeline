@@ -17,9 +17,28 @@ pipeline{
         stage("Test"){
             steps{
                 echo "Performing unit testing"
+                echo "Ensuring code works as expected"
+
                 echo "Performing integration testing"
+                echo "Ensuring application components work together as expected"
+
+                echo "Tool for unit tests: Unity Test Tool"
+                echo "Tool for integration tests: Cypress"
             }
         }
+        stage("Code Analysis"){
+            steps{
+                echo "Analysing code"
+                echo "Code works as expected!"
+
+                echo "Performing integration testing"
+                echo "Application components work together as expected"
+
+                echo "Tool for unit tests: Unity Test Tool"
+                echo "Tool for integration tests: Cypress"
+            }
+        }
+        
         stage("Deploy"){
             steps{
                 echo "Deploying ..."
