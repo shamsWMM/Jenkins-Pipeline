@@ -57,7 +57,7 @@ pipeline{
         stage("Test on Staging"){
             steps{
                 echo "Performing integration testing on staging"
-                echo "Ensuring application functions in staging"
+                echo "Verifying application functions in staging"
                 echo "Tool for integration tests: Cypress"
             }
         }
